@@ -1,0 +1,240 @@
+{
+  "current_state": "start",
+  "choices_made": [
+    {
+      "state": "start",
+      "choice_id": "chapter1_exploring",
+      "choice_text": "检查小屋的其他角落",
+      "timestamp": "2025-08-07 17:17:57.366464"
+    },
+    {
+      "state": "chapter1_exploring",
+      "choice_id": "chapter1_radio",
+      "choice_text": "检查无线电设备",
+      "timestamp": "2025-08-07 17:18:09.085399"
+    },
+    {
+      "state": "chapter1_radio",
+      "choice_id": "chapter1_dialogue_end",
+      "choice_text": "继续对话",
+      "timestamp": "2025-08-07 17:18:19.833473"
+    },
+    {
+      "state": "start",
+      "choice_id": "chapter1_photo",
+      "choice_text": "查看墙上的照片",
+      "timestamp": "2025-08-07 17:29:45.792768"
+    },
+    {
+      "state": "chapter1_photo",
+      "choice_id": "chapter1_locked",
+      "choice_text": "再次尝试开门",
+      "timestamp": "2025-08-07 17:30:00.255209"
+    },
+    {
+      "state": "chapter1_locked",
+      "choice_id": "chapter1_rocking_chair",
+      "choice_text": "检查摇椅",
+      "timestamp": "2025-08-07 17:30:31.771977"
+    },
+    {
+      "state": "chapter1_rocking_chair",
+      "choice_id": "chapter1_radio",
+      "choice_text": "回到无线电旁",
+      "timestamp": "2025-08-07 17:31:35.704726"
+    },
+    {
+      "state": "chapter1_radio",
+      "choice_id": "chapter1_dialogue_end",
+      "choice_text": "继续对话",
+      "timestamp": "2025-08-07 17:31:45.363397"
+    },
+    {
+      "state": "chapter2_act1_scene1",
+      "choice_id": "chapter2_act1_contact1",
+      "choice_text": "继续与这个声音交谈",
+      "timestamp": "2025-08-07 17:32:10.719331"
+    },
+    {
+      "state": "chapter2_act1_contact1",
+      "choice_id": "chapter2_act1_scene2",
+      "choice_text": "尝试主动呼叫",
+      "timestamp": "2025-08-07 17:34:15.815309"
+    },
+    {
+      "state": "chapter2_act1_scene2",
+      "choice_id": "chapter2_act1_scene3",
+      "choice_text": "记录发现",
+      "timestamp": "2025-08-07 17:34:43.210349"
+    },
+    {
+      "state": "chapter2_act1_scene3",
+      "choice_id": "chapter2_act1_scene4",
+      "choice_text": "分析线索",
+      "timestamp": "2025-08-07 17:35:17.648991"
+    },
+    {
+      "state": "chapter2_act1_scene4",
+      "choice_id": "chapter2_act1_scene5",
+      "choice_text": "继续监听",
+      "timestamp": "2025-08-07 17:36:02.957879"
+    },
+    {
+      "state": "chapter2_act1_scene5",
+      "choice_id": "chapter2_act2_intro",
+      "choice_text": "尝试重新连接",
+      "timestamp": "2025-08-07 17:36:22.235863"
+    },
+    {
+      "state": "chapter2_act2_intro",
+      "choice_id": "chapter2_act2_contact2",
+      "choice_text": "尝试再次联系B",
+      "timestamp": "2025-08-07 17:36:41.785178"
+    },
+    {
+      "state": "chapter2_act2_contact2",
+      "choice_id": "chapter2_act2_contact3",
+      "choice_text": "联系D",
+      "timestamp": "2025-08-07 17:36:58.899088"
+    },
+    {
+      "state": "chapter2_act2_contact3",
+      "choice_id": "chapter2_act2_contact4",
+      "choice_text": "联系C",
+      "timestamp": "2025-08-07 17:37:18.403521"
+    },
+    {
+      "state": "chapter2_act2_contact4",
+      "choice_id": "chapter2_act3_intro",
+      "choice_text": "整理所有线索",
+      "timestamp": "2025-08-07 17:37:37.787027"
+    },
+    {
+      "state": "chapter2_act3_intro",
+      "choice_id": "chapter2_man_appears",
+      "choice_text": "面对黝黑男子",
+      "timestamp": "2025-08-07 17:38:02.265834"
+    },
+    {
+      "state": "chapter2_man_appears",
+      "choice_id": "chapter2_man_appears",
+      "choice_text": "质疑他的说法",
+      "timestamp": "2025-08-07 17:38:32.520954"
+    },
+    {
+      "state": "chapter2_man_appears",
+      "choice_id": "chapter3_choice_intro",
+      "choice_text": "询问男子的身份",
+      "timestamp": "2025-08-07 17:39:02.611640"
+    },
+    {
+      "state": "chapter3_choice_intro",
+      "choice_id": "chapter3_act1_view3",
+      "choice_text": "选择观看平凡的人生",
+      "timestamp": "2025-08-07 17:39:19.485382"
+    },
+    {
+      "state": "chapter3_act1_view3",
+      "choice_id": "chapter3_act2_intro",
+      "choice_text": "放弃互换",
+      "timestamp": "2025-08-07 17:40:23.663701"
+    },
+    {
+      "state": "chapter3_act2_intro",
+      "choice_id": "chapter3_final_accept",
+      "choice_text": "接受当下，推门离开",
+      "timestamp": "2025-08-07 17:41:06.797072"
+    }
+  ],
+  "variables": {
+    "player_code_name": null,
+    "view_count": 0,
+    "first_view_choice": null,
+    "second_view_choice": null,
+    "third_view_choice": "stay",
+    "man_appeared": false,
+    "loop_count": 0,
+    "current_chapter": 2
+  },
+  "chapter_progress": {
+    "chapter1": false,
+    "chapter2": false,
+    "chapter3": false,
+    "chapter4": false
+  },
+  "endings_unlocked": [],
+  "characters": {
+    "main_self": {
+      "character_id": "main_self",
+      "name": "你自己",
+      "description": "困在尖崖小屋的主角",
+      "personality": "困惑、恐惧但好奇",
+      "background": "一个普通的现代人，在海边散步时被困",
+      "voice_style": "平静但带着紧张",
+      "frequency": 14250,
+      "trust_level": 0,
+      "available": true,
+      "discovered": false
+    },
+    "successful_self": {
+      "character_id": "successful_self",
+      "name": "成功的你",
+      "description": "事业成功但孤独的你",
+      "personality": "自信但疲惫",
+      "background": "选择了事业而放弃家庭的自己",
+      "voice_style": "疲惫而深沉",
+      "frequency": 14251,
+      "trust_level": 0,
+      "available": true,
+      "discovered": false
+    },
+    "loved_self": {
+      "character_id": "loved_self",
+      "name": "被爱的你",
+      "description": "拥有完美爱情的你",
+      "personality": "温柔但遗憾",
+      "background": "选择了爱情而放弃梦想的自己",
+      "voice_style": "温柔而忧伤",
+      "frequency": 14252,
+      "trust_level": 0,
+      "available": true,
+      "discovered": false
+    },
+    "ordinary_self": {
+      "character_id": "ordinary_self",
+      "name": "平凡的你",
+      "description": "过着平淡生活的你",
+      "personality": "平静但空虚",
+      "background": "选择了逃避而平庸的自己",
+      "voice_style": "平淡而迷茫",
+      "frequency": 14253,
+      "trust_level": 0,
+      "available": true,
+      "discovered": false
+    },
+    "female_self": {
+      "character_id": "female_self",
+      "name": "女性的你",
+      "description": "如果是女性的话",
+      "personality": "敏锐而坚强",
+      "background": "平行世界中的女性版本",
+      "voice_style": "清脆而坚定",
+      "frequency": 14254,
+      "trust_level": 0,
+      "available": true,
+      "discovered": false
+    },
+    "mysterious_man": {
+      "character_id": "mysterious_man",
+      "name": "神秘男子",
+      "description": "皮肤黝黑的神秘男子",
+      "personality": "神秘而戏谑",
+      "background": "似乎知道所有真相的引导者",
+      "voice_style": "低沉而充满磁性",
+      "frequency": 14255,
+      "trust_level": 0,
+      "available": true,
+      "discovered": false
+    }
+  }
+}
