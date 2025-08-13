@@ -59,12 +59,6 @@ python game_engine/radio_game_enhanced.py
 ```bash
 # 基础版本
 python game_engine/radio_game.py
-
-# 增强版本（推荐）
-python game_engine/radio_game_enhanced.py
-
-# 集成版本
-python game_engine/radio_game_integrated.py
 ```
 
 ## 项目结构
