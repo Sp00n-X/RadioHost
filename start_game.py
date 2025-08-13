@@ -19,9 +19,6 @@ def main():
         from story_system import StoryProgress, StoryContent, CharacterManager
         print("✅ 故事系统模块导入成功")
         
-        # 测试游戏引擎
-        from game_engine import RadioGame, RadioGameEnhanced, RadioGameIntegrated
-        print("✅ 游戏引擎模块导入成功")
         
         # 测试工具模块
         from utils import demo_screen_refresh
@@ -36,7 +33,6 @@ def main():
         
         print("\n🎮 运行方式：")
         print("  基础版本: python game_engine/radio_game.py")
-        print("  增强版本: python game_engine/radio_game_enhanced.py")
         print("  集成版本: python game_engine/radio_game_integrated.py")
         
     except ImportError as e:

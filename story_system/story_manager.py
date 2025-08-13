@@ -143,3 +143,42 @@ class StoryProgress:
         """获取当前场景"""
         current_state = self.current_state.value if hasattr(self.current_state, 'value') else str(self.current_state)
         return self.story_content.get_scene(current_state)
+    
+    def serialize(self) -> Dict[str, Any]:
+        """序列化故事进度为字典"""
+        # 准备角色数据
+        char_data = {}
+        for char_id, char in self.character_manager.characters.items():
+            char_data[char_id] = char.to_dict()
+        
+        return {
+            'current_state': self.current_state.value if hasattr(self.current_state, 'value') else str(self.current_state),
+            'choices_made': self.choices_made,
+            'variables': self.variables,
+            'chapter_progress': self.chapter_progress,
+            'endings_unlocked': self.endings_unlocked,
+            'characters': char_data
+        }
+    
+    @classmethod
+    def deserialize(cls, data: Dict[str, Any]) -> 'StoryProgress':
+        """从字典反序列化故事进度"""
+        story_progress = cls()
+        
+        # 恢复基本状态
+        story_progress.current_state = StoryState(data.get('current_state', 'start'))
+        story_progress.choices_made = data.get('choices_made', [])
+        story_progress.variables.update(data.get('variables', {}))
+        story_progress.chapter_progress.update(data.get('chapter_progress', {}))
+        story_progress.endings_unlocked = data.get('endings_unlocked', [])
+        
+        # 恢复角色状态
+        char_data = data.get('characters', {})
+        for char_id, char_info in char_data.items():
+            char = story_progress.character_manager.get_character(char_id)
+            if char:
+                char.trust_level = char_info.get('trust_level', 0)
+                char.available = char_info.get('available', True)
+                char.discovered = char_info.get('discovered', False)
+        
+        return story_progress

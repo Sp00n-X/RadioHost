@@ -1,55 +1,6 @@
 {
-  "current_state": "chapter2_act1_contact1",
-  "choices_made": [
-    {
-      "state": "start",
-      "choice_id": "chapter1_exploring",
-      "choice_text": "检查小屋的其他角落",
-      "timestamp": "2025-08-08 09:08:09.998936"
-    },
-    {
-      "state": "chapter1_exploring",
-      "choice_id": "chapter1_rocking_chair",
-      "choice_text": "检查摇椅",
-      "timestamp": "2025-08-08 09:08:21.188026"
-    },
-    {
-      "state": "chapter1_rocking_chair",
-      "choice_id": "chapter1_radio",
-      "choice_text": "回到无线电旁",
-      "timestamp": "2025-08-08 09:08:28.590678"
-    },
-    {
-      "state": "chapter1_radio",
-      "choice_id": "chapter1_dialogue_end",
-      "choice_text": "继续对话",
-      "timestamp": "2025-08-08 09:08:39.898158"
-    },
-    {
-      "state": "chapter1_dialogue_end",
-      "choice_id": "chapter2_act1_scene1",
-      "choice_text": "进入第二章",
-      "timestamp": "2025-08-08 09:08:56.872889"
-    },
-    {
-      "state": "chapter2_act1_scene1",
-      "choice_id": "chapter2_act1_contact1",
-      "choice_text": "继续与这个声音交谈",
-      "timestamp": "2025-08-08 09:09:24.793556"
-    },
-    {
-      "state": "chapter2_act1_contact1",
-      "choice_id": "chapter1_exploring",
-      "choice_text": "检查小屋的其他角落",
-      "timestamp": "2025-08-08 10:16:33.543936"
-    },
-    {
-      "state": "chapter2_act1_contact1",
-      "choice_id": "next_scene",
-      "choice_text": "继续",
-      "timestamp": "2025-08-08 10:21:45.140705"
-    }
-  ],
+  "current_state": "start",
+  "choices_made": [],
   "variables": {
     "player_code_name": null,
     "view_count": 0,
@@ -58,11 +9,11 @@
     "third_view_choice": null,
     "man_appeared": false,
     "loop_count": 0,
-    "current_chapter": 2
+    "current_chapter": 1
   },
   "chapter_progress": {
     "chapter1": false,
-    "chapter2": true,
+    "chapter2": false,
     "chapter3": false,
     "chapter4": false
   },

@@ -19,6 +19,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from story_system import StoryProgress, StoryContent, CharacterManager
 from game_engine.input_manager_v2 import LightweightInputBlocker
+from game_engine.save_manager import SaveManager
 
 class TypewriterEffect:
     """打字机效果输出"""
@@ -100,6 +101,10 @@ class RadioGame:
         self.game_time = 0
         self.game_active = True
         
+        # 初始化存档管理器
+        self.save_manager = SaveManager()
+        self.current_save_slot = None
+        
         # 初始化故事系统
         self.story_progress = StoryProgress()
         self.story_content = StoryContent()
@@ -115,21 +120,33 @@ class RadioGame:
         self.characters = {}
         
     def load_save(self):
-        """加载存档（兼容旧版本）"""
-        try:
-            with open('save.json', 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except FileNotFoundError:
-            return {
-                'branch': 'start',
-                'trust_levels': {},
-                'discovered_clues': []
-            }
+        """加载存档（使用SaveManager）"""
+        slot = self.save_manager.select_save_slot()
+        if slot is None:
+            return False
+            
+        story_progress = self.save_manager.load_from_slot(slot)
+        if story_progress is None:
+            # 空槽位，开始新游戏
+            self.story_progress = StoryProgress()
+            self.current_save_slot = slot
+            TypewriterEffect.type_out(f"开始新游戏 - 存档 {slot}", 0.05, 'green')
+            return True
+        
+        # 加载成功
+        self.story_progress = story_progress
+        self.current_save_slot = slot
+        TypewriterEffect.type_out(f"继续游戏 - 存档 {slot}", 0.05, 'green')
+        return True
     
     def save_game(self):
-        """保存游戏"""
-        self.story_progress.save_progress()
-        TypewriterEffect.type_out("游戏进度已保存。", 0.05, 'green')
+        """保存游戏（使用SaveManager）"""
+        if self.current_save_slot is None:
+            TypewriterEffect.type_out("错误：未选择存档槽位", 0.05, 'red')
+            return
+            
+        self.save_manager.save_to_slot(self.current_save_slot, self.story_progress)
+        TypewriterEffect.type_out(f"游戏进度已保存到存档 {self.current_save_slot}。", 0.05, 'green')
     
     def intro(self):
         """游戏开场 - 简化版"""
@@ -247,10 +264,15 @@ class RadioGame:
         TypewriterEffect.type_out(help_text, 0.03, 'yellow')
     
     def run(self):
-        """主游戏循环 - 直接进入故事模式"""
+        """主游戏循环 - 包含存档选择"""
         self.intro()
         
-        # 直接进入故事模式
+        # 选择存档槽位并加载/创建游戏
+        if not self.load_save():
+            TypewriterEffect.type_out("已退出游戏。", 0.05, 'yellow')
+            return
+        
+        # 开始故事模式
         self.start_story_mode()
         
         # 游戏结束
